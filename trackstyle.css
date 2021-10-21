@@ -1,0 +1,111 @@
+.navbar-bg{
+    background-color: rgba(0, 136, 145, 1);
+}
+
+.header-logo{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 35px;
+    color: white;
+    padding-left: 40px;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+.custom-toggler.navbar-toggler {
+    border-color: black;
+    border-width: 3px;
+} 
+
+.dashboard{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.dashboard:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.track{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 4px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.track:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 4px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.advise{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.advise:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.logout{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.logout:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.bg-image{
+    background-image: url(assets/Fitness\ Pattern\ Seamless\ Blue\ Icons\ On.png);
+    height: 250px;
+}
+
+.jumboton-title{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 50px;
+    color: rgba(15, 48, 87, 1);
+}
+
+.footercopyright{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    color: black;
+}
