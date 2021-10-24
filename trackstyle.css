@@ -102,7 +102,7 @@
     color: rgba(15, 48, 87, 1);
 }
 
-body, html {
+/* body, html {
   height: 100%;
 }
 
@@ -115,7 +115,7 @@ body {
 }
 
 #q-graph {
-  display: block; /* fixes layout wonkiness in FF1.5 */
+  display: block; fixes layout wonkiness in FF1.5
   position: relative; 
   width: 600px; 
   height: 300px;
@@ -176,8 +176,8 @@ body {
   padding-top: 2px;
   border-right: 1px dotted #C4C4C4; 
   color: #AAA;
-}
-#q-graph #q1 {
+} */
+/* #q-graph #q1 {
   left: 0;
 }
 #q-graph #q2 {left: 150px;}
@@ -211,9 +211,9 @@ font-weight: normal; color: #333;}
   z-index: 1;
   margin-bottom: -300px;
   font-size: 10px;
-  font-family: "fira-sans-2", Verdana, sans-serif;
-}
-
+  font-family: "fira-sans-2", Verdana, sans-serif; */
+/* } */
+/* 
 #ticks .tick {
   position: relative; 
   border-bottom: 1px dotted #C4C4C4; 
@@ -225,7 +225,7 @@ font-weight: normal; color: #333;}
   left: -5em; 
   top: -0.8em; 
   margin: 0 0 0 0.5em;
-}
+} */
 
 .footercopyright{
     text-align: center;
