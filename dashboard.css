@@ -1,0 +1,190 @@
+.navbar-bg{
+    background-color: rgba(0, 136, 145, 1);
+}
+
+.header-logo{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 35px;
+    color: white;
+    padding-left: 40px;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+  
+.custom-toggler.navbar-toggler {
+    border-color: black;
+    border-width: 3px;
+} 
+
+.dashboard{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 4px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.dashboard:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.track{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.track:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 4px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.advise{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.advise:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.logout{
+    font-family: Roboto;
+    font-weight: 900;
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.logout:hover{
+    font-family: Roboto;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.bg-image{
+    background-image: url(assets/DashboardBg.jpg);
+    height: 250px;
+}
+
+.jumboton-title{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 50px;
+    color: rgba(15, 48, 87, 1);
+}
+
+.text-dash h1{
+    font-size: 72px;
+    /* font-weight: bold; */
+}
+
+.text-dash h3{
+    font-size: 34px;
+}
+
+.calculate-bmi{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.container-cal{
+    width: 40%;
+    margin-bottom: 5%;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+label{
+    position: relative;
+    color: #0F3057;
+    font-family: Roboto;
+    font-size: 20px;
+    border: 2px solid #0F3057;
+    border-radius: 5px;
+    padding: 10px 50px;
+    display: flex;
+}
+
+label::before{
+    content: "";
+    height: 30px;
+    width: 30px;
+    border: 3px solid #0F3057;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+input[type="radio"]:checked + label{
+    background-color: #0F3057;
+    color: white;
+    
+}
+
+input[type="radio"]:checked + label::before{
+    border: 8px solid white;
+    background-color: #0F3057;
+}
+
+input[type=number], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+    margin-bottom: 5%;
+  }
+
+  input[type=submit] {
+    width: 80%;
+    background-color: #0F3057;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0 40px 70px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+
+.footercopyright{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    color: black;
+}
