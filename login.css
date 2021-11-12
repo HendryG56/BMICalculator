@@ -85,3 +85,11 @@ form{
     text-align: center;
     font-family: Roboto;
 }
+
+.footercopyright{
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 20px;
+    color: black;
+}
