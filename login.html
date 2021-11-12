@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
-    <div class="Login">
+    <div class="container-md">
 
-        <h3>
-            BMI 
-            
-        </h3>
-        
-        <h3>
-            CALCULATOR
-        </h3>
- 
-        <h4>
-            Sign in
-        </h4>
+        <div class="Login">
+
+            <h3>
+                BMI
+            </h3>
+
+            <h3>
+                CALCULATOR
+            </h3>
+
+            <h4>
+                Sign in
+            </h4>
+        </div>
+
+        <div class="formulir">
+            <form>
+                <label for="Email" class="email_label">Email</label>
+                <input type="email" id="Email" Email="Email" placeholder="Email" class="email_input"><br>
+
+                <label for="Password" class="password_label">Password</label>
+                <input type="password" id="Password" Password="Password" placeholder="Password" class="password_input"><br><br>
+            </form>
+        </div>
+
+        <div class="divsubmit">
+            <button type="submit" class="btnsubmit">SIGN UP</button>
+        </div>    
+
+
+        <div class="DontHaveAccount">
+            <h3 class="donthave">
+                Don’t Have Account Yet ?
+                <a href="#Register">
+                    Sign Up
+                </a>
+            </h3>
+
+
+        </div>
     </div>
 
-    <div class="Email">
-        <form action="">
-            <label for="Email">Email:</label><br>
-            <input type="email" id="Email" Email="Email" placeholder="Email"><br>
-            
-            
-          </form> 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
 
-    </div>
-
-    <div class="Password">
-        <form action="">
-            <label for="Password">Password :</label><br>
-            <input type="password" id="Password" Password="Password" placeholder="Password"><br><br>
-            
-          </form> 
-
-    </div>
-        
-    <div class="ButtonSignIn">
-        <input type="submit" value="SIGN IN">
-    </div>
-    
-    <div class="DontHaveAccount">
-        <h3>
-            Don’t Have Account Yet ?
-            <a href="#Register"> 
-                Sign Up
-            </a>
-        </h3>
-
-        
-    </div>
-
+    <script src="bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>
+
 </html>

@@ -1,20 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-*{font-family: 'Raleway', sans-serif;}
-
-:root{
-    --box-shadow:0 16px 16.5px rgba(0,0,0,.1);
-    --primary : #0F3057;
-
-}
-
-html{
-    overflow-x: hidden;
-    scroll-padding-top: 18px;
-    scroll-behavior: smooth;
-    font-size: 60%;
-    
-}
 .Login{
     margin: 5%;
 }
@@ -24,70 +7,81 @@ html{
     text-align: center;
     color: #0F3057;
     margin: 5px;
-    padding-top: 5px;
-
+    font-family: Roboto;
+    font-weight: bold;
 }
 
 .Login h4{
     font-size: 20px;
     text-align: center;
     color: black;
-
+    margin-top: 10px;
+    font-family: Roboto;
 }
 
-.Email form input{
-    width: 50% ;
-    border: 3px solid black;
-    border-radius: 9px;
-
+.formulir{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.Email form label{
-    width: 50% ;
-    font-size: 15px;
-
-    
-}
-
-.Email{
-    padding-left : 30%;
-}
-
-.Password{
-    padding-left : 30%;
-    padding-top: 10px;
-}
-
-.Password form input{
-    width: 50% ;
-    border: 3px solid black;
-    border-radius: 9px;
-
-}
-
-.Password form label{
-    width: 50% ;
-    font-size: 15px; 
-}
-
-.ButtonSignIn  {
-    padding-left : 48%;
-}
-
-.ButtonSignIn input {
-    background: var(--primary);
-    color: white;
+form{
     border-radius: 10px;
-    padding: 8px 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.email_label{
     font-size: 20px;
+    font-family: Roboto;
+}
+
+.email_input{
+    font-size: 20px;
+    font-family: Roboto;
+    border-radius: 7px;
+    border-color: black;
+    padding-left: 15px;
+}
+
+.password_label{
+    font-size: 20px;
+    font-family: Roboto;
+}
+
+.password_input{
+    font-size: 20px;
+    font-family: Roboto;
+    border-radius: 7px;
+    border-color: black;
+    padding-left: 15px;
+}
+
+.divsubmit{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.btnsubmit{
+    background-color: #0F3057;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .DontHaveAccount h3{
-    font-size: 10px;
+    font-size: 20px;
+    margin-top: 20px;
     text-align: center;
+    font-family: Roboto;
 }
 .DontHaveAccount  h3 a{
-    font-size: 10px;
+    font-size: 20px;
+    margin-top: 20px;
     text-align: center;
-    color: var(--primary);
+    font-family: Roboto;
 }
