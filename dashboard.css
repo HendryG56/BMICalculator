@@ -169,7 +169,7 @@ input[type=number], select {
     margin-bottom: 5%;
   }
 
-  input[type=submit] {
+.calculate{
     width: 80%;
     background-color: #0F3057;
     color: white;
@@ -178,8 +178,7 @@ input[type=number], select {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-
+}
 
 .footercopyright{
     text-align: center;
@@ -187,4 +186,10 @@ input[type=number], select {
     font-weight: 900;
     font-size: 20px;
     color: black;
+}
+
+.error{
+    font-size: 20px;
+    font-family: Roboto;
+    color: red;
 }

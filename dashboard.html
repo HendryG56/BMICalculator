@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,66 +10,68 @@
     <link rel="stylesheet" href="dashboard.css">
 
 </head>
+
 <body>
 
     <div class="container-md">
 
         <nav class="navbar navbar-custom navbar-expand-lg navbar-bg">
 
-        <a class="navbar-brand header-logo" href="#">BMI Calculator</a>
-            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand header-logo" href="#">BMI Calculator</a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#mynavbar"
+                aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav">
 
-        <li class="nav-item active">
-            <a class="nav-link dashboard" href="dashboard.html">Dashboard</a>
-        </li>
+                    <li class="nav-item active">
+                        <a class="nav-link dashboard" href="dashboard.html">Dashboard</a>
+                    </li>
 
-        <li class="nav-item">
-            <a class="nav-link track" href="track.html">Track</a>
-        </li>
+                    <li class="nav-item">
+                        <a class="nav-link track" href="track.html">Track</a>
+                    </li>
 
-        <li class="nav-item">
-            <a class="nav-link advise" href="advise.html">Advise</a>
-        </li>
+                    <li class="nav-item">
+                        <a class="nav-link advise" href="advise.html">Advise</a>
+                    </li>
 
-        <li class="nav-item">
-            <a class="nav-link logout" href="login.html">Log Out</a>
-        </li>
+                    <li class="nav-item">
+                        <a class="nav-link logout" href="login.html">Log Out</a>
+                    </li>
 
-        </ul>
-      </div>
-    </nav>
+                </ul>
+            </div>
+        </nav>
 
-    <div class="jumbotron jumbotron-fluid bg-image d-flex justify-content-center align-items-center">
-        <div class="container ">
-          <p class="jumboton-title ">Dashboard</p>
+        <div class="jumbotron jumbotron-fluid bg-image d-flex justify-content-center align-items-center">
+            <div class="container ">
+                <p class="jumboton-title ">Dashboard</p>
+            </div>
         </div>
-      </div>
 
-      <div class="text-dash">
-        <h3>Welcome Back, Username</h3>
-        <br>
-        <h3>Your last BMI Result is:</h3>
-        <br>
-        <h1>19.5</h1>
-        <br>
-        <h3>You are overweight, You should eat more heatlhy food 
-            and do more workout!</h3>
-    </div>
+        <div class="text-dash">
+            <h3>Welcome Back, Username</h3>
+            <br>
+            <h3>Your last BMI Result is:</h3>
+            <br>
+            <h1>19.5</h1>
+            <br>
+            <h3>You are overweight, You should eat more heatlhy food
+                and do more workout!</h3>
+        </div>
 
-    <div class="calculate-bmi">
-        <h1>Calculate your BMI</h1>
-    </div>
+        <div class="calculate-bmi">
+            <h1>Calculate your BMI</h1>
+        </div>
 
         <div class="container-cal">
 
-            <input type="radio" name="Gender" id="Male">
+            <input type="radio" name="Gender" id="Male" value="Male">
             <label for="Male">Male</label>
-            <input type="radio" name="Gender" id="Female">
+            <input type="radio" name="Gender" id="Female" value="Female">
             <label for="Female">Female</label>
 
         </div>
@@ -76,18 +79,22 @@
         <form>
             <span for="Yweight">Your Weight (kg): </span>
             <input type="number" id="yweight" name="Yweight">
-        
+            <p id="error-weight" class="error"></p>
+
             <span for="Yheight">Your Height (cm):</span>
             <input type="number" id="yheight" name="Yheight">
+            <p id="error-height" class="error"></p>
         </form>
 
-        <input type="submit" value="CALCULATE">
+        <button type="submit" class="calculate" onclick="return Validate()">CALCULATE</button>
 
         <div class="text-dash">
-        <h3>Your BMI Result is:</h3>
-        <br>
-        <h1>19.5</h1>
-        <br>
+            <h3>Your BMI Result is:</h3>
+            <br>
+            <h1 id="bmi-result"></h1>
+            <br>
+            <h1 id="bmi-range"></h1>
+            <br>
         </div>
 
     </div>
@@ -95,7 +102,46 @@
     <footer>
         <p class="footercopyright"> © 2021 BMI Calculator</p>
     </footer>
-    
+
+    <script>
+        function Validate() {
+            var weight = document.getElementById('yweight').value;
+            var height = document.getElementById('yheight').value / 100;
+            var bmi = weight / (height * height);
+
+            if (weight == "") {
+                document.getElementById("error-weight").innerHTML =
+                    "Weight must be filled out";
+                return false;
+            } 
+            else{
+                document.getElementById("error-weight").innerHTML = "";
+            }
+            if (height == "") {
+                document.getElementById("error-height").innerHTML =
+                    "Height must be filled out";
+                return false;
+            } 
+            else{
+                document.getElementById("error-height").innerHTML = "";
+            }
+
+            if (bmi < 18.5) {
+                document.getElementById("bmi-result").innerHTML = bmi
+                document.getElementById("bmi-range").innerHTML =
+                    "You are underweight";
+            } else if (bmi > 25) {
+                document.getElementById("bmi-result").innerHTML = bmi
+                document.getElementById("bmi-range").innerHTML =
+                    "You are overweight";
+            } else {
+                document.getElementById("bmi-result").innerHTML = bmi
+                document.getElementById("bmi-range").innerHTML =
+                    "You are normal weight";
+            }
+        }
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -104,4 +150,5 @@
 
 
 </body>
+
 </html>
