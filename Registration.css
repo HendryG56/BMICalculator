@@ -119,3 +119,9 @@ form{
     font-size: 20px;
     color: black;
 }
+
+.error{
+    font-size: 20px;
+    font-family: Roboto;
+    color: red;
+}

@@ -32,29 +32,33 @@
         <div class="formulir">
             <form>
                 <label for="Full Name" class="fullname_label">Full Name</label>
-                <input type="fullname" id="Full Name" Full Name="Full Name" placeholder="Full Name" class="fullname_input"><br>
+                <input type="fullname" id="Full Name" Full Name="Full Name" placeholder="Full Name" class="fullname_input">
+                <p id="error-fullname" class="error"></p>
 
                 <label for="Email" class="email_label">Email</label>
                 <input type="email" id="Email" Email="Email" placeholder="Email"
-                    class="email_input"><br>
+                    class="email_input">
+                <p id="error-email" class="error"></p>    
 
                 <label for="Password" class="password_label">Password</label>
-                <input type="password" id="Password" Password="Password" placeholder="Password" class="password_input"><br>
+                <input type="password" id="Password" Password="Password" placeholder="Password" class="password_input">
+                <p id="error-password" class="error"></p>
                 
                 <label for="Confirm Password" class="confirmpassword_label">Confirm Password</label>
-                <input type="confirmpassword" id="Confirm Password" Confirm Password="Confirm Password" placeholder="Confirm Password" class="confirmpassword_input"><br><br>
+                <input type="password" id="Confirm Password" Confirm Password="Confirm Password" placeholder="Confirm Password" class="confirmpassword_input">
+                <p id="error-confirmpassword" class="error"></p>
             </form>
         </div>
 
         <div class="divsubmit">
-                <button type="submit" class="btnsubmit" onclick="location.href='dashboard.html'">SIGN UP</button>
+                <button type="submit" class="btnsubmit" onclick="return Validate()">SIGN UP</button>
         </div>
 
 
         <div class="DoHaveAccount">
             <h3 class="dohave">
                 Already Have An Account ?
-                <a href="#Login">
+                <a href="login.html">
                     Log In
                 </a>
             </h3>
@@ -67,6 +71,121 @@
         </footer>
 
     </div>
+
+    <script>
+        function cekalphabet() {
+            var fullname = document.getElementById("Full Name").value;
+            for (let characters of fullname) {
+                if (
+                    (characters >= "a" && characters <= "z") ||
+                    (characters >= "A" && characters <= "Z")
+                ) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function ceknumeric() {
+            var fullname = document.getElementById("Full Name").value;
+            for (let characters of fullname) {
+                if (characters >= "0" && characters <= "9") {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function cekalphabetp() {
+            var password = document.getElementById("Password").value;
+            for (let characters of password) {
+                if (
+                    (characters >= "a" && characters <= "z") ||
+                    (characters >= "A" && characters <= "Z")
+                ) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function ceknumericp() {
+            var password = document.getElementById("Password").value;
+            for (let characters of password) {
+                if (characters >= "0" && characters <= "9") {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function Validate() {
+            var check_alpha = 0;
+            var check_numer = 0;
+            var fullname = document.getElementById("Full Name").value;
+            var email = document.getElementById("Email").value;
+            var password = document.getElementById("Password").value;
+            var confirmpassword = document.getElementById("Confirm Password").value;
+
+            if (!ceknumeric() || !cekalphabet()) {
+                document.getElementById("error-fullname").innerHTML =
+                    "Fullname must be alphanumeric";
+                return false;
+            }
+            else{
+                document.getElementById("error-fullname").innerHTML = "";
+            }
+            if (fullname.length < 5 || fullname.length > 15) {
+                document.getElementById("error-fullname").innerHTML =
+                    "Fullname must be between 5 to 15 characters";
+                return false;
+            }
+            else{
+                document.getElementById("error-fullname").innerHTML = "";
+            }
+            if (!email.includes("@")) {
+                document.getElementById("error-email").innerHTML =
+                    "Please input a right email";
+                return false;
+            }
+            else{
+                document.getElementById("error-email").innerHTML = "";
+            }
+            if (password == "") {
+                document.getElementById("error-password").innerHTML =
+                    "Password must be filled out";
+                return false;
+            } 
+            else{
+                document.getElementById("error-password").innerHTML = "";
+            }
+            if (password.length < 5 || password.length > 15) {
+                document.getElementById("error-password").innerHTML =
+                    "Password must be between 5 to 15 characters";
+                return false;
+            }
+            else{
+                document.getElementById("error-password").innerHTML = "";
+            }
+            if (!ceknumericp() || !cekalphabetp()) {
+                document.getElementById("error-password").innerHTML =
+                    "Password must be alphanumeric";
+                return false;
+            }
+            else{
+                document.getElementById("error-password").innerHTML = "";
+            }
+            if(password != confirmpassword){
+                document.getElementById("error-confirmpassword").innerHTML =
+                    "Confirm Password must be the same with password";
+                return false;
+            }
+            else{
+                location.href='login.html'
+            }
+            
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -32,23 +32,24 @@
         <div class="formulir">
             <form>
                 <label for="Email" class="email_label">Email</label>
-                <input type="email" id="Email" Email="Email" placeholder="Email" class="email_input"><br>
+                <input type="email" id="Email" Email="Email" placeholder="Email" class="email_input">
+                <p id="error-email" class="error"></p>
 
                 <label for="Password" class="password_label">Password</label>
-                <input type="password" id="Password" Password="Password" placeholder="Password"
-                    class="password_input"><br><br>
+                <input type="password" id="Password" Password="Password" placeholder="Password" class="password_input">
+                <p id="error-password" class="error"></p>
             </form>
         </div>
 
         <div class="divsubmit">
-                <button type="submit" class="btnsubmit" onclick="location.href='dashboard.html'">SIGN IN</button>
+            <button type="submit" class="btnsubmit" onclick="return Validate()">SIGN IN</button>
         </div>
 
 
         <div class="DontHaveAccount">
             <h3 class="donthave">
                 Don’t Have Account Yet ?
-                <a href="#Register">
+                <a href="Registration.html">
                     Sign Up
                 </a>
             </h3>
@@ -61,6 +62,72 @@
         </footer>
 
     </div>
+
+    <script>
+        function cekalphabet() {
+            var password = document.getElementById("Password").value;
+            for (let characters of password) {
+                if (
+                    (characters >= "a" && characters <= "z") ||
+                    (characters >= "A" && characters <= "Z")
+                ) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function ceknumeric() {
+            var password = document.getElementById("Password").value;
+            for (let characters of password) {
+                if (characters >= "0" && characters <= "9") {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function Validate() {
+            var check_alpha = 0;
+            var check_numer = 0;
+            var email = document.getElementById("Email").value;
+            var password = document.getElementById("Password").value;
+
+            if (!email.includes("@")) {
+                document.getElementById("error-email").innerHTML =
+                    "Please input a right email";
+                return false;
+            }
+            else{
+                document.getElementById("error-email").innerHTML = "";
+            }
+            if (password == "") {
+                document.getElementById("error-password").innerHTML =
+                    "Password must be filled out";
+                return false;
+            } 
+            else{
+                document.getElementById("error-password").innerHTML = "";
+            }
+            if (password.length < 5 || password.length > 15) {
+                document.getElementById("error-password").innerHTML =
+                    "Password must be between 5 to 15 characters";
+                return false;
+            }
+            else{
+                document.getElementById("error-password").innerHTML = "";
+            }
+            if (!ceknumeric() || !cekalphabet()) {
+                document.getElementById("error-password").innerHTML =
+                    "Password must be alphanumeric";
+                return false;
+            }
+            else{
+                location.href='dashboard.html'
+            }
+            
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
