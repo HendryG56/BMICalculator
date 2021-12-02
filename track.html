@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Track Page</title>
-    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="trackstyle.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Page</title>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="trackstyle.css">
 </head>
+
 <body>
 
-    <div class="container-md">
+  <div class="container-md">
 
-        <nav class="navbar navbar-custom navbar-expand-lg navbar-bg">
+    <nav class="navbar navbar-custom navbar-expand-lg navbar-bg">
       <a class="navbar-brand header-logo" href="#">BMI Calculator</a>
-      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#mynavbar"
+        aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
@@ -36,62 +40,51 @@
     </nav>
 
     <div class="jumbotron jumbotron-fluid bg-image d-flex justify-content-center align-items-center">
-        <div class="container ">
-          <p class="jumboton-title ">Track</p>
-        </div>
+      <div class="container ">
+        <p class="jumboton-title ">Track</p>
       </div>
     </div>
+  </div>
 
-    <div>
+  <div>
+    <div class="bodychart" id="myChart"></div>
+  </div>
 
-      <!-- <table id="q-graph">
-        <caption>BMI History Result</caption>
-        <thead>
-        <tr>
-        <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr class="qtr" id="q1">
-        <th scope="row">10-11-2021</th>
-        <td class="sent bar" style="height: 120px;">></td>
-        </tr>
-        <tr class="qtr" id="q2">
-        <th scope="row">10-13-2021</th>
-        <td class="sent bar" style="height: 130px;"></td>
-        </tr>
-        <tr class="qtr" id="q3">
-        <th scope="row">10-16-2021</th>
-        <td class="sent bar" style="height: 110px;"></td>
-        </tr>
-        <tr class="qtr" id="q4">
-        <th scope="row">10-19-2021</th>
-        <td class="sent bar" style="height: 100px;"></td>
-        </tr>
-        </tbody>
-        </table>
-        
-        <div id="ticks">
-        <div class="tick" style="height: 59px;"><p>50</p></div>
-        <div class="tick" style="height: 59px;"><p>40</p></div>
-        <div class="tick" style="height: 59px;"><p>30</p></div>
-        <div class="tick" style="height: 59px;"><p>20</p></div>
-        <div class="tick" style="height: 59px;"><p>10</p></div>
-        </div> -->
+  <br>
 
-    </div>
+  <footer>
+    <p class="footercopyright"> © 2021 BMI Calculator</p>
+  </footer>
 
-    <br>
+  <script>
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
 
-    <footer>
-        <p class="footercopyright"> © 2021 BMI Calculator</p>
-    </footer>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Day', 'BMI'],
+        ['11/24/2021', 19.5],
+        ['11/26/2021', 18],
+        ['11/29/2021', 17.5],
+        ['12/1/2021', 20],
+        ['12/2/2021', 19.7]
+      ]);
 
-    <script src="bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>
+      var options = {
+        title: 'BMI Result'
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('myChart'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+  <script src="bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
