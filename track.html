@@ -44,40 +44,18 @@
         <p class="jumboton-title ">Track</p>
       </div>
     </div>
+
+
+    <div>
+      <img class="chart-image" src="assets/chart.jpg" alt="Chart Image">
+    </div>
+
+    <br>
+
+    <footer>
+      <p class="footercopyright"> © 2021 BMI Calculator</p>
+    </footer>
   </div>
-
-  <div>
-    <div class="bodychart" id="myChart"></div>
-  </div>
-
-  <br>
-
-  <footer>
-    <p class="footercopyright"> © 2021 BMI Calculator</p>
-  </footer>
-
-  <script>
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
-
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Day', 'BMI'],
-        ['11/24/2021', 19.5],
-        ['11/26/2021', 18],
-        ['11/29/2021', 17.5],
-        ['12/1/2021', 20],
-        ['12/2/2021', 19.7]
-      ]);
-
-      var options = {
-        title: 'BMI Result'
-      };
-
-      var chart = new google.visualization.BarChart(document.getElementById('myChart'));
-      chart.draw(data, options);
-    }
-  </script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
